@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>game</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Canvas -->
+    <canvas id="canvas" width="1900" height="900" style="border: 1px solid black;"></canvas>
+
+    <h1 id="P1-Army-Header">Player I Army</h1>
+    <h1 id="P2-Army-Header">Player II Army</h1>
+
+    <progress id="healthBarP1" value="0"></progress>
+    <progress id="healthBarP2" value="0"></progress>
+
+    <p class="playerWonText"></p>
+
+    <!-- buttons -->
+    <img id="addKnightP1" class="button" src="assets/buttons/knight_button.png" onclick="addKnight(1)">
+    <img id="addKnightP2" class="button" src="assets/buttons/knight_button.png" onclick="addKnight(2)">
+    <img id="addWizardP1" class="button" src="assets/buttons/wizard_button.png" onclick="addWizard(1)">
+    <img id="addWizardP2" class="button" src="assets/buttons/wizard_button.png" onclick="addWizard(2)">
+    <img id="lightningP1" class="button" src="assets/buttons/lightning_button.png" onclick="lightning(1)">
+    <img id="lightningP2" class="button" src="assets/buttons/lightning_button.png" onclick="lightning(2)">
+    <img id="battle" class="button" src="assets/buttons/battle_button.png" onclick="toggleBattle()">
+
+    <!-- Knights text //change to lowercase letters-->
+    <p id="KnightsP1">Knights:</p>
+    <p id="KnightsLeftNumberP1"></p>
+    <p id="KnightsP2">Knights:</p>
+    <p id="KnightsLeftNumberP2"></p>
+
+    <!-- Wizards text -->
+    <p id="WizardsP1">Wizards:</p>
+    <p id="WizardsLeftNumberP1"></p>
+    <p id="WizardsP2">Wizards:</p>
+    <p id="WizardsLeftNumberP2"></p>
+
+    <!-- Bolts left text -->
+    <p id="BoltsLeftP1">Bolts left:</p>
+    <p id="BoltsLeftNumberP1"></p>
+    <p id="BoltsLeftP2">Bolts left:</p>
+    <p id="BoltsLeftNumberP2"></p>
+
+  </div>
+
+  <!-- classes -->
+  <script src="classes/sprite.js"></script>
+  <script src="classes/knight.js"></script>
+  <script src="classes/fireball.js"></script>
+  <script src="classes/lightning.js"></script>
+  <script src="classes/wizard.js"></script>
+  <script src="classes/firework.js"></script>
+
+  <!-- main js file -->
+  <script src="script.js"></script>
+
+
+
+
+</body>
+
+</html>

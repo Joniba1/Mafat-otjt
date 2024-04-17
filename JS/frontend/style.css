@@ -1,0 +1,263 @@
+.container {
+    position: relative;
+    width: 1900px;
+    height: 900px;
+}
+
+.button {
+    cursor: pointer;
+    position: absolute;
+}
+
+.button:hover {
+    transform: scale(1.07);
+}
+
+#P1-Army-Header {
+    position: absolute;
+    left: 70px;
+    color: white;
+    top: 0px;
+}
+
+#P2-Army-Header {
+    position: absolute;
+    right: 56px;
+    color: white;
+    top: 0px;
+}
+
+#healthBarP1 {
+    position: absolute;
+    top: 30px;
+    left: 15.1%;
+    width: 500px;
+    height: 20px;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#healthBarP2 {
+    position: absolute;
+    top: 30px;
+    right: 14.5%;
+    width: 500px;
+    height: 20px;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#healthBarP1::-webkit-progress-value {
+    background-color: #4caf50;
+}
+
+#healthBarP2::-webkit-progress-value {
+    background-color: #2196f3;
+}
+
+#healthBarP1::-webkit-progress-bar {
+    background-color: #ccc;
+}
+
+#healthBarP2::-webkit-progress-bar {
+    background-color: #ccc;
+}
+
+/* Buttons */
+#battle {
+    position: absolute;
+    top: 0.5%;
+    left: 45.5%;
+    width: 200px;
+    height: 133.3px;
+}
+
+/* knights */
+#addKnightP1 {
+    position: absolute;
+    bottom: 28%;
+    width: 170px;
+    height: 113px;
+    left: 0%;
+}
+
+#addKnightP2 {
+    cursor: pointer;
+    position: absolute;
+    bottom: 28%;
+    width: 170px;
+    height: 113px;
+    right: 0px;
+}
+
+/* wizards */
+#addWizardP1 {
+    position: absolute;
+    bottom: 15%;
+    width: 170px;
+    height: 113px;
+    left: 0px;
+}
+
+#addWizardP2 {
+    position: absolute;
+    bottom: 15%;
+    width: 170px;
+    height: 113px;
+    right: 0px;
+}
+
+/* Lightning */
+#lightningP1 {
+    position: absolute;
+    bottom: 2%;
+    width: 170px;
+    height: 113px;
+    left: 0px;
+    font-size: 20px;
+}
+
+#lightningP2 {
+    position: absolute;
+    bottom: 2%;
+    width: 170px;
+    height: 113px;
+    right: 0px;
+    font-size: 20px;
+}
+
+#BoltsLeftP1 {
+    position: absolute;
+    bottom: 70px;
+    left: 8.2%;
+    color: white;
+    font-size: 20px;
+
+}
+
+#BoltsLeftP2 {
+    position: absolute;
+    bottom: 70px;
+    right: 8%;
+    color: white;
+    font-size: 20px;
+}
+
+#BoltsLeftNumberP1 {
+    position: absolute;
+    bottom: 45px;
+    left: 8.2%;
+    color: cyan;
+    font-size: 20px;
+}
+
+#BoltsLeftNumberP2 {
+    position: absolute;
+    bottom: 45px;
+    right: 11.6%;
+    color: cyan;
+    font-size: 20px;
+}
+
+
+/* Knights */
+#KnightsP1 {
+    position: absolute;
+    left: 8.6%;
+    top: 80px;
+    color: white;
+    font-size: 22px;
+}
+
+#KnightsP2 {
+    position: absolute;
+    right: 9.5%;
+    color: whitesmoke;
+    font-size: 22px;
+    top: 80px;
+}
+
+#KnightsLeftNumberP1 {
+    position: absolute;
+    left: 8.6%;
+    top: 110px;
+    color: white;
+    font-size: 20px;
+}
+
+#KnightsLeftNumberP2 {
+    position: absolute;
+    right: 12.8%;
+    color: whitesmoke;
+    font-size: 22px;
+    top: 110px;
+}
+
+
+/* Wizards */
+#WizardsP1 {
+    position: absolute;
+    left: 8.5%;
+    top: 205px;
+    color: white;
+    font-size: 22px;
+
+}
+
+#WizardsP2 {
+    position: absolute;
+    right: 9.5%;
+    top: 205px;
+    color: white;
+    font-size: 22px;
+}
+
+#WizardsLeftNumberP1 {
+    position: absolute;
+    left: 8.7%;
+    top: 233px;
+    color: #f693d8;
+    font-size: 22px;
+}
+
+#WizardsLeftNumberP2 {
+    position: absolute;
+    right: 12.8%;
+    top: 233px;
+    color: #f693d8;
+    font-size: 22px;
+}
+
+
+.playerWonText {
+    font-size: 70px;
+    font-weight: bold;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: changeColor 2s infinite alternate;
+}
+
+
+@keyframes changeColor {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: blue;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: yellow;
+    }
+
+    100% {
+        color: purple;
+    }
+}
