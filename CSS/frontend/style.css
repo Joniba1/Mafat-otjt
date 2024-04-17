@@ -1,0 +1,220 @@
+body {
+    background-image: url("assets/background.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 1711px, 700px;
+}
+
+@font-face {
+    font-family: 'Chalk';
+    src: 
+        url('assets/fonts/chalk.ttf')
+}
+
+
+
+.container {
+    position: relative;
+    width: 1299px;
+    height: 766px;
+}
+
+
+
+/* Spinning arrow */
+#arrowMinutes {
+    position: absolute;
+    width: 37px;
+    height: 10px;
+    background: linear-gradient(100deg, #544e45, #454040);
+    right: 468px;
+    top: 110px;
+    animation: spin 3s linear infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 1;
+}
+
+#arrowMinutes:before {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left-color: rgb(75, 62, 62);
+    border-right: none;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    left: 100%;
+    top: -5px;
+}
+
+
+#arrowHours {
+    position: absolute;
+    width: 37px;
+    height: 10px;
+    background: linear-gradient(100deg, #544e45, #454040);
+    right: 468px;
+    top: 110px;
+    animation: spin 10s linear infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 1;
+}
+
+
+#arrowHours:before {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left-color: rgb(75, 62, 62);
+    border-right: none;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    left: 100%;
+    top: -5px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        transform-origin: left center;
+        /* Set the rotation origin to the left side */
+    }
+
+    to {
+        transform: rotate(360deg);
+        transform-origin: left center;
+        /* Set the rotation origin to the left side */
+    }
+}
+
+#circle {
+    position: absolute;
+    left: 785px;
+    top: 104px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(229, 156, 32);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* color changing div */
+@keyframes changeColor {
+    0% {
+        background-color: red;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    25% {
+        background-color: rgb(65, 198, 251);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        background-color: red;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+
+    }
+
+    75% {
+        background-color: rgb(65, 198, 251);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background-color: red;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+#color-changing-div:hover {
+    animation: changeColor 3s infinite alternate;
+}
+
+#color-changing-div {
+    position: absolute;
+    background-color: red;
+    right: -20px;
+    bottom: 76px;
+    width: 85px;
+    height: 57px;
+    border-radius: 15px;
+    box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    transform: rotateX(70deg);
+}
+
+/* radio box */
+input[type=radio] {
+    position: relative;
+    left: 967.5px;
+    top: 252px;
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 3.6em;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background-color: #c2b3b3;
+}
+
+input[type=radio]:hover {
+    opacity: 0.7;
+}
+
+input[type=radio]:checked#Brown {
+    background-color: rgb(231, 138, 56);
+}
+
+input[type=radio]:checked#Green {
+    background-color: rgb(144, 234, 144);
+}
+
+input[type=radio]:checked#yellowish {
+    background-color: rgb(234, 179, 40);
+}
+
+
+/* List */
+#MenuTitle {
+    position: absolute;
+    font-family: 'Chalk';
+    font-weight: 100;
+    font-size: 45px;
+    top: 16px;
+    right: -253px;
+    color: white;
+
+}
+
+#Menu {
+    position: absolute;
+    top: 98px;
+    right: -220px;
+
+
+
+}
+
+#Menu li {
+    font-family: 'Chalk';
+    padding: 4.5px;
+    color: rgb(49, 153, 49);
+    font-weight: 100;
+    font-size: 32px;
+
+}
+
+/* Pinkning the forth element in the list */
+#Menu li:nth-child(4) {
+    color: rgb(176, 65, 176);
+}
+
+/* Every following div will be blue */
+#Menu~div {
+    color: rgb(36, 36, 226);
+}

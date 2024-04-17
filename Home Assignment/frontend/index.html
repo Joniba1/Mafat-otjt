@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <h1>Playing Cards</h1>
+
+  <!--displayed by default as long as its not empty-->
+  <div id="cardImagesContainer"></div>
+
+  <!-- buttons -->
+  <button onclick="loadImagesFromBackend()">Show Deck</button>
+  <button onclick="getRandomCard()">Get Random Card</button>
+  <button onclick="showAddCardForm(true)">Add Specific Card</button>
+  <button onclick="showDeleteCardForm(true)">Delete Specific Card</button>
+  <button onclick="shuffleDeck()">Shuffle Deck</button>
+
+  <!-- forms -->
+  <form id="addCardForm" style="display: none;">
+
+    <h2>Add Card:</h2>
+
+    <label for="newCardNumber">Card:</label>
+    <select id="newCardNumber">
+      <option value="1">Ace</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">Jack</option>
+      <option value="12">Queen</option>
+      <option value="13">King</option>
+    </select>
+
+    <span>of</span>
+
+    <label for="newCardShape"></label>
+    <select id="newCardShape">
+      <option value="diamonds">Diamonds</option>
+      <option value="clubs">Clubs</option>
+      <option value="hearts">Hearts</option>
+      <option value="spades">Spades</option>
+    </select>
+
+    <button onclick="addCard()">Submit</button>
+    <button onclick="showAddCardForm(false)">Cancel</button>
+
+  </form>
+
+  <form id="deleteCardForm" style="display: none;">
+
+    <h2>Delete Card:</h2>
+
+    <label for="deleteCardNumber">Card:</label>
+    <select id="deleteCardNumber">
+      <option value="1">Ace</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">Jack</option>
+      <option value="12">Queen</option>
+      <option value="13">King</option>
+    </select>
+
+    <span>of</span>
+
+    <label for="deleteCardShape"></label>
+    <select id="deleteCardShape">
+      <option value="diamonds">Diamonds</option>
+      <option value="clubs">Clubs</option>
+      <option value="hearts">Hearts</option>
+      <option value="spades">Spades</option>
+    </select>
+
+    <button onclick="deleteCard()">Submit</button>
+    <button onclick="showDeleteCardForm(false)">Cancel</button>
+
+  </form>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
