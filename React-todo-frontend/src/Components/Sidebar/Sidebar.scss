@@ -1,0 +1,37 @@
+.sidebar {
+    position: relative;
+    background: linear-gradient(#73BBBF, #587EA1, #3F5C8D, #1B2E71);
+    border-radius: 1em;
+    height: calc(100vh - 3em);
+    margin: 1.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+
+
+    .react-icon {
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        svg {
+            width: 2.3125em;
+            font-size: 2.3125em;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+    }
+
+    .logout-button {
+        margin-top: 1em;
+    }
+
+    .add-task-button {
+        margin-top: 0.5em;
+    }
+}

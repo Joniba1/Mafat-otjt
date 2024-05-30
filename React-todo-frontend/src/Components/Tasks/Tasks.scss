@@ -1,0 +1,117 @@
+.columns-container {
+  margin-top: 1.5em;
+
+  .tasks-header {
+    border-radius: 1em;
+    font-size: 0.8em;
+    background-color: #c1c9c5;
+    display: flex;
+    padding-left: 1em;
+    font-family: 'RedditSans';
+    justify-content: space-between;
+
+    .tasks-count {
+      padding-right: 0.5em;
+    }
+  }
+
+
+  .tasks-container {
+    margin-top: 1em;
+    display: flex;
+    overflow: auto;
+    max-height: 37.175em;
+  }
+
+  .column-1 {
+    margin-left: 1.5em;
+  }
+
+  .column {
+    width: 100%;
+
+    .task {
+      padding: 1em;
+      margin-bottom: 1em;
+      background-color: white;
+      border-radius: 1em;
+      box-shadow: rgba(50, 50, 93, 0.1) 0px 4px 8px -2px, rgba(0, 0, 0, 0.1) 0px 3px 6px -3px;
+      max-width: 26.4375em;
+
+      .task-title {
+        background-color: #ffffff;
+        font-size: 1.5em;
+        font-family: 'Roboto';
+        margin-bottom: 0.5em;
+        cursor: pointer;
+      }
+
+      .task-description {
+        background-color: #ffffff;
+        color: #818285;
+        font-size: 1.2em;
+        font-family: 'Roboto';
+        margin-bottom: 0.5em;
+      }
+
+      .task-utilities {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: #6d6d6e;
+
+        .due_text-container {
+          margin-right: auto;
+
+          .due-text {
+            font-family: 'Inter';
+            font-size: 1.25em;
+            font-weight: 500;
+            color: #4e5058;
+          }
+
+          .due-text.overdue {
+            color: red;
+          }
+        }
+
+        .buttons {
+          display: flex;
+          gap: 0.5em;
+
+          .deleteButton,
+          .setRelevanceButton,
+          .setCompletedButton {
+            cursor: pointer;
+          }
+
+          .deleteButton {
+
+
+            font-size: 1.3em;
+
+            &:hover {
+              color: red;
+            }
+          }
+
+          .setRelevanceButton {
+            font-size: 1.4em;
+
+            &:hover {
+              color: orange;
+            }
+          }
+
+          .setCompletedButton {
+            font-size: 1.3em;
+
+            &:hover {
+              color: rgb(29, 190, 26);
+            }
+          }
+        }
+      }
+    }
+  }
+}

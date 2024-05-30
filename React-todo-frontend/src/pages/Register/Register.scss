@@ -1,0 +1,23 @@
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.register-container {
+    left: 75%;
+}
+
+.back-rect-register {
+    left: 0;
+}
+
+.error-message-right {
+    left: unset;
+    right: 1em;
+    animation: slideInRight 0.2s forwards;
+}
