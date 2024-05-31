@@ -12,15 +12,11 @@ Additionally, the home page includes a percentile tasks graph feature. This grap
 
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop).
 2. Clone this repository to your local machine.
-3. build the docker image:
 
-```bash
-docker build -t frontend-image .
-```
 ## App intialization
 
 ```bash
-docker run -p 5173:5173 frontend-image
+docker run -p 5173:5173 joniba1/frontend-image
 ```
 
 ## Usage
