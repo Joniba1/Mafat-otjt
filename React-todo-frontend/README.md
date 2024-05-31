@@ -4,27 +4,20 @@ This repository contains the frontend-side for the TodoList React application. I
 
 ## Description
 
-This application provides a user friendly interface for managing tasks, including functionalities such as creating, editing, deleting, and retrieving tasks from the backend API.
+This application provides a user friendly interface for interacting with the backend API endpoints.
 
 Additionally, the home page includes a percentile tasks graph feature. This graph visualizes tasks due time.
 
-## Getting Started
+## Pre-requirements
 
-To initiate the frontend for the first time, follow the next steps:
-
-1. If you haven't already [download Docker Desktop](https://www.docker.com/products/docker-desktop).
+1. [Docker Desktop](https://www.docker.com/products/docker-desktop).
 2. Clone this repository to your local machine.
-3. Navigate to the cloned repository directory in your CMD or terminal.
-4. Execute the following commands:
+3. build the docker image:
 
 ```bash
 docker build -t frontend-image .
 ```
-```bash
-docker run -p 5173:5173 frontend-image
-```
-
-For subsequent executions, utilizing this command is enough:
+## App intialization
 
 ```bash
 docker run -p 5173:5173 frontend-image
@@ -33,3 +26,7 @@ docker run -p 5173:5173 frontend-image
 ## Usage
 
 Once the frontend application is running, you can access it in your web browser by navigating [here](http://localhost:5173).
+
+## Additional notes
+
+To interact with the API effectively, ensure the [backend application](https://github.com/Joniba1/React-todo-backend) is also activated.
