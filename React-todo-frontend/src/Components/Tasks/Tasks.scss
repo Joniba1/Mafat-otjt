@@ -20,7 +20,7 @@
     margin-top: 1em;
     display: flex;
     overflow: auto;
-    max-height: 37.175em;
+    max-height: calc(100vh - 13.875em);
   }
 
   .column-1 {
