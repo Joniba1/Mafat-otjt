@@ -3,11 +3,11 @@ import Searchbar from '../Searchbar/Searchbar';
 import TodoTasks from '../Tasks/TodoTasks/TodoTasks';
 import { Task } from '../../types';
 import Sidebar from '../Sidebar/Sidebar';
-import CompletedTasks from '../Tasks/ResolvedTasks/CompletedTasks';
-import IrrelevantTasks from '../Tasks/ResolvedTasks/IrrelevantTasks';
+import CompletedTasks from '../Tasks/CompletedTasks/CompletedTasks';
+import IrrelevantTasks from '../Tasks/IrrelevantTasks/IrrelevantTasks';
 import TasksGraph from '../TasksGraph/TasksGraph';
 import './ComponentsManager.scss';
-import EditTask from '../Modals/EditTask';
+import EditTask from '../Modals/Edit/EditTask';
 
 export interface TasksProps {
     searchedTasks: Task[];

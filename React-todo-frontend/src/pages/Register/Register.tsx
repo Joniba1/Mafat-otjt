@@ -3,16 +3,16 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Register.scss';
 import { User } from '../../types';
-import { MdError } from 'react-icons/md';
 import Cookies from 'js-cookie';
 import api from '../../api';
+import ErrorMsg from '../../Components/ErrorMsg/ErrorMsg';
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [usernameStyle, setUsernameStyle] = useState<CSSProperties>({});
   const [passwordStyle, setPasswordStyle] = useState<CSSProperties>({});
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [errorMsg, seterrorMsg] = useState<string>('');
 
   const navigate = useNavigate();
 
@@ -37,23 +37,23 @@ const Register: React.FC = () => {
       if (axios.isAxiosError(error) && error.response) {
         const { errorCode } = error.response.data;
         if (errorCode === 'EMPTY_FIELDS') {
-          setErrorMessage('Username or password are empty');
+          seterrorMsg('Username or password are empty');
         }
         else if (errorCode === 'USERNAME_TOO_LONG') {
           setUsernameStyle({ color: 'red' });
-          setErrorMessage('Maximum length of username is 15 characters');
+          seterrorMsg('Maximum length of username is 15 characters');
         }
         else if (errorCode === 'PASSWORD_TOO_LONG') {
-          setErrorMessage('Maximum length of password is 60 characters');
+          seterrorMsg('Maximum length of password is 60 characters');
           setPasswordStyle({ color: 'red' });
 
         }
         else if (errorCode === 'USERNAME_TAKEN') {
           setUsernameStyle({ color: 'red' });
-          setErrorMessage('Username is taken');
+          seterrorMsg('Username is taken');
         }
       } else {
-        setErrorMessage('An error occurred during registration');
+        seterrorMsg('An error occurred during registration');
       }
     }
   };
@@ -61,13 +61,13 @@ const Register: React.FC = () => {
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
     setUsernameStyle({ color: 'black' });
-    setErrorMessage('');
+    seterrorMsg('');
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     setPasswordStyle({ color: 'black' });
-    setErrorMessage('');
+    seterrorMsg('');
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -79,12 +79,7 @@ const Register: React.FC = () => {
 
   return (
     <>
-      {errorMessage && (
-        <div className='error-message error-message-right'>
-          <MdError />
-          <p>Error: {errorMessage}</p>
-        </div>
-      )}
+      <ErrorMsg errorMsg={errorMsg} side={'right'} />
 
       <div className='back-rect back-rect-register'></div>
       <div className='sign-container register-container'>

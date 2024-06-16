@@ -3,12 +3,12 @@ import { useState } from 'react';
 import Cookies from 'js-cookie';
 
 //Components
-import AddTaskForm from '../Modals/AddTask';
+import AddTaskForm from '../Modals/Add/AddTask';
 
 //CSS
 import './Sidebar.scss';
 
-//React icons
+//React iconsgit b
 import { RiAddLargeLine, RiLogoutBoxLine } from 'react-icons/ri';
 
 
