@@ -7,7 +7,6 @@ import { validateToken } from '../auth/jwt';
 const database = Knex(knexConfig);
 const router = new Router();
 
-
 router.get('/tasks', validateToken, async (ctx) => {
     const username: string = ctx.state.user.username;
     try {
