@@ -2,10 +2,9 @@ import React, { useState, CSSProperties } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-
 import './Login.scss';
-import { MdError } from 'react-icons/md';
 import api from '../../api';
+import ErrorMsg from '../../Components/ErrorMsg/ErrorMsg';
 
 type User = {
   username: string;
@@ -17,7 +16,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [usernameStyle, setUsernameStyle] = useState<CSSProperties>({});
   const [passwordStyle, setPasswordStyle] = useState<CSSProperties>({});
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [errorMsg, seterrorMsg] = useState<string>('');
 
   const navigate = useNavigate();
 
@@ -27,22 +26,22 @@ const Login = () => {
       const response = await api.post('/login', user);
 
       if (response.status === 200) {
-        const { token } = response.data; 
-        Cookies.set('jwt', token, { expires: 1 }); 
+        const { token } = response.data;
+        Cookies.set('jwt', token, { expires: 1 });
         window.dispatchEvent(new Event('logged-in'));
       }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         const { errorCode } = error.response.data;
         if (errorCode === 'EMPTY_FIELDS') {
-          setErrorMessage('Username or password are empty!');
+          seterrorMsg('Username or password are empty!');
         } else if (errorCode === 'USER_NOT_FOUND') {
-          setErrorMessage('User doesn`t exist!');
+          seterrorMsg('User doesn`t exist!');
         } else if (errorCode === 'INCORRECT_PASSWORD') {
-          setErrorMessage('Incorrect password!');
+          seterrorMsg('Incorrect password!');
         }
       } else {
-        setErrorMessage('An error occurred during login');
+        seterrorMsg('An error occurred during login');
       }
     }
   };
@@ -54,13 +53,13 @@ const Login = () => {
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
     setUsernameStyle({ color: 'black' });
-    setErrorMessage('');
+    seterrorMsg('');
   };
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
     setPasswordStyle({ color: 'black' });
-    setErrorMessage('');
+    seterrorMsg('');
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -72,12 +71,8 @@ const Login = () => {
 
   return (
     <>
-      {errorMessage && (
-            <div className='error-message sign'>
-              <MdError />
-              <p>{errorMessage}</p>
-            </div>
-          )}
+      <ErrorMsg errorMsg={errorMsg} side={'left'} />
+
       <div className='back-rect'></div>
 
       <div className='sign-container'>

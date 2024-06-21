@@ -1,0 +1,29 @@
+.error-message {
+    display: flex;
+    align-items: center;
+    background-color: #f6dbde;
+    padding: 1em;
+    border-radius: 0.5em;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    animation: slideInLeft 0.2s forwards;
+
+    p {
+        margin-left: 0.5em;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+
+    svg {
+        font-size: 1.5em;
+        color: red;
+    }
+}
+
+.error-message-right {
+    left: unset;
+    right: 1em;
+    animation: slideInRight 0.2s forwards;
+}
